@@ -31,7 +31,7 @@ def create_manual_data():
     data_set = json.loads(f.read());
     person_imgs = {"Left" : [], "Right": [], "Center": []};
     person_features = {"Left" : [], "Right": [], "Center": []};
-    print("Please start turning slowly. Press 'q' to save and add this new user to the dataset");
+    print("Please turn face right and left slowly. Press 'q' to save and add this new user to the system");
     while True:
         _, frame = vs.read();
         rects, landmarks = face_detect.detect_face(frame, 80);  # min face size is set to 80x80
@@ -47,9 +47,6 @@ def create_manual_data():
 
     pre=pd.read_excel('Class.xlsx')
     writer = pd.ExcelWriter('Class.xlsx', engine='xlsxwriter')
-    # g = open('./names.txt','r');
-    # jso
-    # names = {2:'Rishabh'}
     names = json.loads(open('names.txt').read())
     while True:
         y=pre.to_dict()

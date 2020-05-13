@@ -61,13 +61,13 @@ def verify():
 def attendance():
 	os.system('python Attendance.py')
 
-r=Button(root, text="Click to register a new student", bd=10, 
+r=Button(root, text="Click to register a new student", command=register,bd=10, 
 	font=('times new roman',12),bg="black",fg= "yellow", height=5).place( x=115, y=570)
 
-r=Button(root, text="Give Attendance", bd=10, 
+r=Button(root, text="Give Attendance", command=verify,bd=10, 
 	font=('times new roman',12),bg="black",fg= "yellow", height=5).place( x=615, y=570)
 
-r=Button(root, text="View Attendance", bd=10, 
+r=Button(root, text="View Attendance", command=attendance,bd=10, 
 	font=('times new roman',12),bg="black",fg= "yellow", height=5).place( x=1020, y=570)
 r=Button(root, text="EXIT", bd=10, 
 	command=quit, font=('times new roman',12),bg="black",fg= "yellow", height=2, width= 10).place( x=637, y=700)

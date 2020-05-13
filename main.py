@@ -48,6 +48,8 @@ def Login(event=None):
     cursor.close()
     conn.close()
 
+def screen():
+	os.system('python screen.py')
 # First Pop up
 def HomeWindow0():
     global Home
@@ -58,14 +60,14 @@ def HomeWindow0():
     Home.bind("<Escape>", quit)
     Home.bind("x", quit)
     Home.attributes("-fullscreen", True)
-    lbl_home=Button(Home, text="Successful Login!", command=HomeWindow1, bd=20, bg="black", fg="green", 
+    lbl_home=Button(Home, text="Successful Login!", command=screen, bd=20, bg="black", fg="green", 
                     font=('times new roman', 20),relief=RIDGE).pack(fill=BOTH, expand=1)
     btn_back = Button(Home, text='Back', command=Back).pack(pady=20)
 
 # def call():
 # 	os.system('python one.py')
 # Second Pop up
-def HomeWindow1():
+'''def HomeWindow1():
     global Home1
     Home.withdraw()
     Home1 = Toplevel()
@@ -73,7 +75,7 @@ def HomeWindow1():
     Home1.configure(background='black')
     Home1.bind("<Escape>", quit)
     Home1.bind("x", quit)
-    a=Label(Home1,text="Did you think that was enough??", bg="black", fg="green",
+    a=Label(Home1,text="Verify your face to enter", bg="black", fg="green",
     	font=('comic sans ms', 30)).pack(ipady=50)
 #     Image
     path = "./5.png"
@@ -82,10 +84,10 @@ def HomeWindow1():
     panel.photo = img
     panel.pack()
     
-    b=Label(Home1,text="Now the real test begins...",bg="black", fg="red",font=('comic sans ms', 30)).pack(ipady=50)
+    b=Label(Home1,text="Click to begin the test...",bg="black", fg="red",font=('comic sans ms', 30)).pack(ipady=50)
     c=Button(Home1, text="Authenticate yourself", command=quit,bd=20, bg="black", fg="red", 
                     font=('times new roman', 20),relief=RIDGE).pack()
-    g =Button(Home1, text='Back', command=HomeWindow0).pack(pady=20)
+    g =Button(Home1, text='Back', command=HomeWindow0).pack(pady=20)'''
     
 # Face Recognition  
 # def Facec1():
